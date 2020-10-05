@@ -22,5 +22,5 @@ const addSlides = async slides => {
   return md;
 };
 
-module.exports = editMarkdown;
-module.exports = addSlides;
+exports.editMarkdown = editMarkdown;
+exports.addSlides = addSlides;

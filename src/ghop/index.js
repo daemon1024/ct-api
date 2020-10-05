@@ -1,6 +1,5 @@
 const GithubAPI = require("./gitcommitpr");
-const editMarkdown = require("./editmarkdown");
-const addSlides = require("./editmarkdown");
+const {editMarkdown , addSlides } = require("./editmarkdown");
 
 async function ghop(meetupData, token) {
   let readmecontent = await editMarkdown(meetupData);
@@ -64,8 +63,8 @@ async function ghopslides(slides, token) {
     });
 }
 
-module.exports = ghop;
-module.exports = ghopslides;
+exports.ghop = ghop;
+exports.ghopslides = ghopslides;
 
 // let meetupData = {
 //   date: "2020-01-01",

@@ -1,8 +1,7 @@
 const { schemaComposer } = require("graphql-compose");
 const { EventsTC } = require("./models/events");
 const { TracksTC } = require("./models/events");
-const ghop = require("./ghop");
-const ghopslides = require("./ghop");
+const { ghop , ghopslides } = require("./ghop");
 require("dotenv").config();
 
 // Here and in all other places of code variables suffix ...TC means that this is ObjectTypeComposer instance, ...ITC - InputTypeComposer, ...ETC - EnumTypeComposer.
