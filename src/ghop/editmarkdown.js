@@ -3,7 +3,7 @@ let newrow = "\n|TBA|TBA|TBA|TBA|TBA|";
 const editMarkdown = async meetupData => {
   console.log(meetupData);
   md = await axios.get(
-    "https://raw.githubusercontent.com/daemon1024/meetups/master/README.md"
+    "https://raw.githubusercontent.com/osdc/meetups/master/README.md"
   );
   md = md.data.replace(/TBA/, meetupData.date);
   md = md.replace(/TBA/, meetupData.topic);
@@ -16,7 +16,7 @@ const editMarkdown = async meetupData => {
 const addSlides = async slides => {
   console.log(slides);
   md = await axios.get(
-    "https://raw.githubusercontent.com/daemon1024/meetups/master/README.md"
+    "https://raw.githubusercontent.com/osdc/meetups/master/README.md"
   );
   md = md.data.replace(/uploaded soon/, `[Slides](${slides})`);
   return md;

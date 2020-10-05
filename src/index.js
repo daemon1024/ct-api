@@ -2,9 +2,10 @@ const express = require("express");
 const graphqlHTTP = require("express-graphql");
 const mongoose = require("mongoose");
 const { graphqlSchema } = require("./schema.js");
+require("dotenv").config();
 
 mongoose
-  .connect("mongodb://localhost:27017/ct_api", {
+  .connect(`mongodb://${process.env.MONGODB_CREDS}@cluster0-shard-00-00.cd44g.mongodb.net:27017,cluster0-shard-00-01.cd44g.mongodb.net:27017,cluster0-shard-00-02.cd44g.mongodb.net:27017/osdc?ssl=true&replicaSet=atlas-t685j1-shard-0&authSource=admin&retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -21,7 +22,7 @@ app.use(
   })
 );
 
-app.listen(4000, () => console.log("Now browse to localhost:4000/graphql"));
+app.listen(process.env.PORT, () => console.log(`Now browse to localhost:${process.env.PORT}/graphql`));
 
 //A sample mutation:
 

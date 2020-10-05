@@ -26,8 +26,8 @@ async function ghop(meetupData, token) {
         .createpr({
           title: "added new meetup via api",
           body: "Please pull these in!",
-          head: "meetup-api",
-          base: "master"
+          head: "daemon1024:meetup-api",
+          base: "osdc:master"
         })
         .then(() => console.log("made a pr"));
     });
